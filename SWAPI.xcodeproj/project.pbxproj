@@ -11,6 +11,15 @@
 		71C064C22985727B0070E1C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C064C12985727B0070E1C4 /* ContentView.swift */; };
 		71C064C4298572820070E1C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C064C3298572820070E1C4 /* Assets.xcassets */; };
 		71C064C7298572820070E1C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C064C6298572820070E1C4 /* Preview Assets.xcassets */; };
+		71D29F89298573FC0022095C /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D29F84298573FC0022095C /* HttpMethod.swift */; };
+		71D29F8A298573FC0022095C /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D29F85298573FC0022095C /* HttpClient.swift */; };
+		71D29F8B298573FC0022095C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D29F86298573FC0022095C /* RequestError.swift */; };
+		71D29F8C298573FC0022095C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D29F87298573FC0022095C /* Endpoint.swift */; };
+		71D29F8E298575A50022095C /* FilmsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D29F8D298575A50022095C /* FilmsEndPoint.swift */; };
+		71D29F90298576CA0022095C /* AllReleases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D29F8F298576CA0022095C /* AllReleases.swift */; };
+		71D29F92298579470022095C /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D29F91298579470022095C /* Film.swift */; };
+		71D29F94298579FA0022095C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D29F93298579FA0022095C /* ContentViewModel.swift */; };
+		71D29F9629857A520022095C /* FilmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D29F9529857A520022095C /* FilmService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +28,15 @@
 		71C064C12985727B0070E1C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		71C064C3298572820070E1C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71C064C6298572820070E1C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		71D29F84298573FC0022095C /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		71D29F85298573FC0022095C /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		71D29F86298573FC0022095C /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		71D29F87298573FC0022095C /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		71D29F8D298575A50022095C /* FilmsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsEndPoint.swift; sourceTree = "<group>"; };
+		71D29F8F298576CA0022095C /* AllReleases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReleases.swift; sourceTree = "<group>"; };
+		71D29F91298579470022095C /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		71D29F93298579FA0022095C /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		71D29F9529857A520022095C /* FilmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +71,9 @@
 			children = (
 				71C064BF2985727B0070E1C4 /* SWAPIApp.swift */,
 				71C064C12985727B0070E1C4 /* ContentView.swift */,
+				71D29F93298579FA0022095C /* ContentViewModel.swift */,
+				71D29F80298573FC0022095C /* Models */,
+				71D29F81298573FC0022095C /* Network */,
 				71C064C3298572820070E1C4 /* Assets.xcassets */,
 				71C064C5298572820070E1C4 /* Preview Content */,
 			);
@@ -65,6 +86,52 @@
 				71C064C6298572820070E1C4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		71D29F80298573FC0022095C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				71D29F8F298576CA0022095C /* AllReleases.swift */,
+				71D29F91298579470022095C /* Film.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		71D29F81298573FC0022095C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				71D29F82298573FC0022095C /* Endpoint */,
+				71D29F83298573FC0022095C /* Base */,
+				71D29F88298573FC0022095C /* Services */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		71D29F82298573FC0022095C /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				71D29F8D298575A50022095C /* FilmsEndPoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		71D29F83298573FC0022095C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				71D29F84298573FC0022095C /* HttpMethod.swift */,
+				71D29F85298573FC0022095C /* HttpClient.swift */,
+				71D29F86298573FC0022095C /* RequestError.swift */,
+				71D29F87298573FC0022095C /* Endpoint.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		71D29F88298573FC0022095C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				71D29F9529857A520022095C /* FilmService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +205,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C064C22985727B0070E1C4 /* ContentView.swift in Sources */,
+				71D29F8E298575A50022095C /* FilmsEndPoint.swift in Sources */,
+				71D29F8B298573FC0022095C /* RequestError.swift in Sources */,
+				71D29F89298573FC0022095C /* HttpMethod.swift in Sources */,
+				71D29F94298579FA0022095C /* ContentViewModel.swift in Sources */,
+				71D29F8A298573FC0022095C /* HttpClient.swift in Sources */,
+				71D29F90298576CA0022095C /* AllReleases.swift in Sources */,
+				71D29F9629857A520022095C /* FilmService.swift in Sources */,
+				71D29F8C298573FC0022095C /* Endpoint.swift in Sources */,
+				71D29F92298579470022095C /* Film.swift in Sources */,
 				71C064C02985727B0070E1C4 /* SWAPIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
