@@ -9,7 +9,12 @@ import Foundation
 
 struct AllReleases: Codable {
     let count: Int
-    let next: Int?
-    let previous: Int?
+
+
     let films: [Film]
+    
+    enum CodingKeys: String, CodingKey {
+        case count
+        case films = "results"
+    }
 }
