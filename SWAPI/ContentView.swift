@@ -13,16 +13,26 @@ struct ContentView: View {
     var defaultFilm = Film(title: "test", episodeID: 0)
     
     var body: some View {
-        VStack {
-            List {
-                ForEach(vm.allReleases?.films ?? [defaultFilm]){ film in
-                    Text(film.title)
+        switch vm.state {
+        case .idle:
+            Color.clear.task { try? await vm.load() }
+        case .loading:
+                    ProgressView()
+        case .loaded(let allReleases):
+            VStack {
+                List {
+                    ForEach(allReleases.films){ film in
+                        Text(film.title)
+                    }
                 }
+                Text("\(vm.allReleases?.count ?? 0)")
             }
-            Text("\(vm.allReleases?.count ?? 0)")
+            .padding()
+        case .failed(let error):
+            Text(error.localizedDescription)
         }
-        .padding()
-        .task { try? await vm.getAllFilms() }
+
+//        .task { try? await vm.load() }
     }
 }
 
