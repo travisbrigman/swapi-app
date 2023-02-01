@@ -23,14 +23,12 @@ protocol LoadableObject: ObservableObject {
 
 
 class ContentViewModel: ObservableObject, LoadableObject {
-    typealias Output = AllReleases
+    let filmService: FilmService
     
     @Published var allReleases: AllReleases?
+    typealias Output = AllReleases
+    
     var state: LoadingState<Output> = .idle
-    
-
-    
-    let filmService: FilmService
     
     init(allReleases: AllReleases? = nil, filmService: FilmService) {
         self.allReleases = allReleases
@@ -39,10 +37,10 @@ class ContentViewModel: ObservableObject, LoadableObject {
     
     
     func load() async throws {
-            state = .loading
-                self.allReleases = try await filmService.getAllFilms()
-            
-        }
+        state = .loading
+        self.allReleases = try await filmService.getAllFilms()
+        state = .loaded(self.allReleases ?? AllReleases(count: 0, films: [Film]()))
+    }
     
 }
 
@@ -50,6 +48,12 @@ class ContentViewModel: ObservableObject, LoadableObject {
 struct AsyncContentView<Source: LoadableObject, Content: View>: View {
     @ObservedObject var source: Source
     var content: (Source.Output) -> Content
+    
+    init(source: Source,
+         @ViewBuilder content: @escaping (Source.Output) -> Content) {
+        self.source = source
+        self.content = content
+    }
 
     var body: some View {
         switch source.state {
