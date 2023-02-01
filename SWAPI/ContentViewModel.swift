@@ -18,10 +18,10 @@ enum LoadingState<Value> {
 protocol LoadableObject: ObservableObject {
     associatedtype Output
     var state: LoadingState<Output> { get }
-    func load() async throws
+    func load()
 }
 
-
+@MainActor
 class ContentViewModel: ObservableObject, LoadableObject {
     let filmService: FilmService
     
@@ -30,16 +30,21 @@ class ContentViewModel: ObservableObject, LoadableObject {
     
     var state: LoadingState<Output> = .idle
     
-    init(allReleases: AllReleases? = nil, filmService: FilmService) {
-        self.allReleases = allReleases
+    init(filmService: FilmService) {
         self.filmService = filmService
     }
     
     
-    func load() async throws {
+    func loadFilmList() async throws {
+        allReleases = try await filmService.getAllFilms()
+    }
+    
+    func load() { // <- this is from the Sundell article. This doesn't work the way I've implemented it here.
         state = .loading
-        self.allReleases = try await filmService.getAllFilms()
-        state = .loaded(self.allReleases ?? AllReleases(count: 0, films: [Film]()))
+//        Task {
+//            allReleases = try await filmService.getAllFilms()
+//        }
+//        state = .loaded(self.allReleases ?? AllReleases(count: 0, films: [Film]()))
     }
     
 }
@@ -58,7 +63,7 @@ struct AsyncContentView<Source: LoadableObject, Content: View>: View {
     var body: some View {
         switch source.state {
         case .idle:
-            Color.clear.task { try? await source.load() }
+            Color.clear.onAppear(perform: source.load)
         case .loading:
             ProgressView()
         case .failed(let error):

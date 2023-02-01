@@ -10,29 +10,23 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var vm = ContentViewModel(filmService: FilmService())
     
-    var defaultFilm = Film(title: "test", episodeID: 0)
-    
     var body: some View {
-        switch vm.state {
-        case .idle:
-            Color.clear.task { try? await vm.load() }
-        case .loading:
-                    ProgressView()
-        case .loaded(let allReleases):
+//        AsyncContentView(source: vm) { allReleases in
             VStack {
                 List {
-                    ForEach(allReleases.films){ film in
+                    ForEach(vm.allReleases?.films ?? [Film]() ){ film in
                         Text(film.title)
                     }
                 }
                 Text("\(vm.allReleases?.count ?? 0)")
+            }.task {
+                do {
+                    try await vm.loadFilmList()
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
-            .padding()
-        case .failed(let error):
-            Text(error.localizedDescription)
-        }
-
-//        .task { try? await vm.load() }
+//        }
     }
 }
 
