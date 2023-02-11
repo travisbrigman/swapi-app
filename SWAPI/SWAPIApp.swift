@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
-
+private var reqresService = ReqresService()
 @main
 struct SWAPIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(dataStore: DataStore(reqResService: reqresService))
         }
     }
 }

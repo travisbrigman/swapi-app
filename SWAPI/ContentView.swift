@@ -8,30 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm = ContentViewModel(filmService: FilmService())
+    @StateObject private var vm: ContentViewModel
+
+    init(dataStore: DataStore) {
+        let vm = ContentViewModel(dataStore: dataStore)
+        _vm = StateObject(wrappedValue: vm)
+    }
     
     var body: some View {
-//        AsyncContentView(source: vm) { allReleases in
+        AsyncContentView(source: vm) { responsData in
             VStack {
                 List {
-                    ForEach(vm.allReleases?.films ?? [Film]() ){ film in
-                        Text(film.title)
+                    ForEach(responsData.data ){ data in
+                        Text(data.name)
                     }
                 }
-                Text("\(vm.allReleases?.count ?? 0)")
-            }.task {
-                do {
-                    try await vm.loadFilmList()
-                } catch {
-                    print(error.localizedDescription)
-                }
+                Text("\(responsData.data.count)")
             }
-//        }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(dataStore: DataStore(reqResService: ReqresService()))
     }
 }

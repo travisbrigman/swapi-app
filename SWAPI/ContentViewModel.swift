@@ -8,47 +8,47 @@
 import Foundation
 import SwiftUI
 
-enum LoadingState<Value> {
-        case idle
-        case loading
-        case failed(Error)
-        case loaded(Value)
+class ContentViewModel: ObservableObject, LoadableObject {
+    let dataStore: DataStore
+    typealias Output = ResponseData
+    
+    init(dataStore: DataStore) {
+        self.dataStore = dataStore
     }
+    
+    var state: LoadingState<Output> = .idle
+    
+    func load() {
+        state = .loading
+        Task {
+            try await Task.sleep(nanoseconds: UInt64(5.0 * Double(NSEC_PER_SEC)))
+            do {
+                try await dataStore.getReqresData()
+            } catch {
+                print(error.localizedDescription)
+            }
+            state = .loaded(dataStore.responseData ?? ResponseData(page: 0, perPage: 0, total: 0, totalPages: 0, data: [], support: Support(url: "", text: "")))
+            print("state should be loaded")
+        }
+
+    }
+    
+}
+
+/// https://www.swiftbysundell.com/articles/handling-loading-states-in-swiftui/
+///
+enum LoadingState<Value> {
+    case idle
+    case loading
+    case failed(Error)
+    case loaded(Value)
+}
 
 protocol LoadableObject: ObservableObject {
     associatedtype Output
     var state: LoadingState<Output> { get }
     func load()
 }
-
-@MainActor
-class ContentViewModel: ObservableObject, LoadableObject {
-    let filmService: FilmService
-    
-    @Published var allReleases: AllReleases?
-    typealias Output = AllReleases
-    
-    var state: LoadingState<Output> = .idle
-    
-    init(filmService: FilmService) {
-        self.filmService = filmService
-    }
-    
-    
-    func loadFilmList() async throws {
-        allReleases = try await filmService.getAllFilms()
-    }
-    
-    func load() { // <- this is from the Sundell article. This doesn't work the way I've implemented it here.
-        state = .loading
-//        Task {
-//            allReleases = try await filmService.getAllFilms()
-//        }
-//        state = .loaded(self.allReleases ?? AllReleases(count: 0, films: [Film]()))
-    }
-    
-}
-
 
 struct AsyncContentView<Source: LoadableObject, Content: View>: View {
     @ObservedObject var source: Source

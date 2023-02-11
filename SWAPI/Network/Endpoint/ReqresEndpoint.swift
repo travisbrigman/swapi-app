@@ -1,34 +1,42 @@
 //
-//  FilmsEndPoint.swift
+//  ReqresEndpoint.swift
 //  SWAPI
 //
-//  Created by Travis Brigman on 1/28/23.
+//  Created by Travis Brigman on 2/9/23.
 //
 
 import Foundation
 
-enum FilmsEndPoint {
-case films
+enum ReqresEndpoint {
+case data
 }
 
-extension FilmsEndPoint: Endpoint {
+extension ReqresEndpoint: Endpoint {
+    
+    var host: String {
+        switch self {
+        case .data:
+            return "reqres.in"
+        }
+    }
+    
     var path: String {
         switch self {
-        case .films:
-            return "/api/films/"
+        case .data:
+            return "/api/{resource}"
         }
     }
     
     var method: RequestMethod {
         switch self {
-        case .films:
+        case .data:
             return .get
         }
     }
     
     var header: [String : String]? {
         switch self {
-        case .films:
+        case .data:
             return [
                 "Content-Type": "application/json;charset=utf-8"
             ]
@@ -37,15 +45,16 @@ extension FilmsEndPoint: Endpoint {
     
     var body: [String : String]? {
         switch self {
-        case .films:
+        case .data:
             return nil
         }
     }
     
     var query: [URLQueryItem]? {
         switch self {
-        case .films:
+        case .data:
             return nil
         }
     }
+    
 }
