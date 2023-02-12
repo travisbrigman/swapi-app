@@ -11,7 +11,7 @@ private var reqresService = ReqresService()
 struct SWAPIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(dataStore: DataStore(reqResService: reqresService))
+            ContentView(vm: ContentViewModel(reqresService: reqresService))
         }
     }
 }
