@@ -10,7 +10,6 @@
 		71568B8E2995572C00F5C14E /* ReqresService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71568B8D2995572C00F5C14E /* ReqresService.swift */; };
 		71568B90299557F200F5C14E /* ReqresEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71568B8F299557F200F5C14E /* ReqresEndpoint.swift */; };
 		71568B9229955A7000F5C14E /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71568B9129955A7000F5C14E /* ResponseData.swift */; };
-		715739562996DE0000CA0BCC /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715739552996DE0000CA0BCC /* DataStore.swift */; };
 		71C064C02985727B0070E1C4 /* SWAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C064BF2985727B0070E1C4 /* SWAPIApp.swift */; };
 		71C064C22985727B0070E1C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C064C12985727B0070E1C4 /* ContentView.swift */; };
 		71C064C4298572820070E1C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C064C3298572820070E1C4 /* Assets.xcassets */; };
@@ -26,7 +25,6 @@
 		71568B8D2995572C00F5C14E /* ReqresService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqresService.swift; sourceTree = "<group>"; };
 		71568B8F299557F200F5C14E /* ReqresEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqresEndpoint.swift; sourceTree = "<group>"; };
 		71568B9129955A7000F5C14E /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
-		715739552996DE0000CA0BCC /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		71C064BC2985727B0070E1C4 /* SWAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C064BF2985727B0070E1C4 /* SWAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIApp.swift; sourceTree = "<group>"; };
 		71C064C12985727B0070E1C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				71C064BF2985727B0070E1C4 /* SWAPIApp.swift */,
-				715739552996DE0000CA0BCC /* DataStore.swift */,
 				71C064C12985727B0070E1C4 /* ContentView.swift */,
 				71D29F93298579FA0022095C /* ContentViewModel.swift */,
 				71D29F80298573FC0022095C /* Models */,
@@ -208,7 +205,6 @@
 				71D29F8B298573FC0022095C /* RequestError.swift in Sources */,
 				71D29F89298573FC0022095C /* HttpMethod.swift in Sources */,
 				71D29F94298579FA0022095C /* ContentViewModel.swift in Sources */,
-				715739562996DE0000CA0BCC /* DataStore.swift in Sources */,
 				71568B8E2995572C00F5C14E /* ReqresService.swift in Sources */,
 				71D29F8A298573FC0022095C /* HttpClient.swift in Sources */,
 				71568B9229955A7000F5C14E /* ResponseData.swift in Sources */,

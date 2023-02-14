@@ -40,5 +40,3 @@ class ContentViewModel: ObservableObject {
     }
     
 }
-
-/// https://www.swiftbysundell.com/articles/handling-loading-states-in-swiftui/

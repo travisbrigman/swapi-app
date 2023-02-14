@@ -10,8 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var vm: ContentViewModel
 
-
-    
     var body: some View {
         switch vm.state {
         case .loaded(let responseData):
@@ -24,7 +22,7 @@ struct ContentView: View {
                 Text("\(responseData.data.count)")
             }
         case .idle:
-            Color.clear.onAppear(perform: vm.load)
+            Color.clear.task(vm.load)
         case .loading:
             ProgressView()
         case .failed(_):
