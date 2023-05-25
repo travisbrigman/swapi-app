@@ -10,6 +10,11 @@
 		71568B8E2995572C00F5C14E /* ReqresService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71568B8D2995572C00F5C14E /* ReqresService.swift */; };
 		71568B90299557F200F5C14E /* ReqresEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71568B8F299557F200F5C14E /* ReqresEndpoint.swift */; };
 		71568B9229955A7000F5C14E /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71568B9129955A7000F5C14E /* ResponseData.swift */; };
+		71A688C929CE8AC200FC361B /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A688C829CE8AC200FC361B /* PostModel.swift */; };
+		71A688CB29CE8CCE00FC361B /* PostResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A688CA29CE8CCE00FC361B /* PostResponseModel.swift */; };
+		71B181892A1FA875000C6792 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 71B181882A1FA875000C6792 /* CodeScanner */; };
+		71B1818B2A1FA8D4000C6792 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1818A2A1FA8D4000C6792 /* ScannerView.swift */; };
+		71B1818D2A1FA911000C6792 /* MyScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1818C2A1FA911000C6792 /* MyScanResult.swift */; };
 		71C064C02985727B0070E1C4 /* SWAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C064BF2985727B0070E1C4 /* SWAPIApp.swift */; };
 		71C064C22985727B0070E1C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C064C12985727B0070E1C4 /* ContentView.swift */; };
 		71C064C4298572820070E1C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C064C3298572820070E1C4 /* Assets.xcassets */; };
@@ -19,12 +24,28 @@
 		71D29F8B298573FC0022095C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D29F86298573FC0022095C /* RequestError.swift */; };
 		71D29F8C298573FC0022095C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D29F87298573FC0022095C /* Endpoint.swift */; };
 		71D29F94298579FA0022095C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D29F93298579FA0022095C /* ContentViewModel.swift */; };
+		71D4E91C29ED9826006BDCCD /* SWAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4E91B29ED9826006BDCCD /* SWAPIUITests.swift */; };
+		71D4E91E29ED9826006BDCCD /* SWAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4E91D29ED9826006BDCCD /* SWAPIUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		71D4E91F29ED9826006BDCCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71C064B42985727B0070E1C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71C064BB2985727B0070E1C4;
+			remoteInfo = SWAPI;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		71568B8D2995572C00F5C14E /* ReqresService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqresService.swift; sourceTree = "<group>"; };
 		71568B8F299557F200F5C14E /* ReqresEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqresEndpoint.swift; sourceTree = "<group>"; };
 		71568B9129955A7000F5C14E /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		71A688C829CE8AC200FC361B /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		71A688CA29CE8CCE00FC361B /* PostResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponseModel.swift; sourceTree = "<group>"; };
+		71B1818A2A1FA8D4000C6792 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		71B1818C2A1FA911000C6792 /* MyScanResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScanResult.swift; sourceTree = "<group>"; };
 		71C064BC2985727B0070E1C4 /* SWAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C064BF2985727B0070E1C4 /* SWAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIApp.swift; sourceTree = "<group>"; };
 		71C064C12985727B0070E1C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,10 +56,21 @@
 		71D29F86298573FC0022095C /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		71D29F87298573FC0022095C /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		71D29F93298579FA0022095C /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		71D4E91929ED9826006BDCCD /* SWAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SWAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D4E91B29ED9826006BDCCD /* SWAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIUITests.swift; sourceTree = "<group>"; };
+		71D4E91D29ED9826006BDCCD /* SWAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		71C064B92985727B0070E1C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71B181892A1FA875000C6792 /* CodeScanner in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71D4E91629ED9826006BDCCD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,11 +80,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		713BB37D29C3427000104FF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		71C064B32985727B0070E1C4 = {
 			isa = PBXGroup;
 			children = (
 				71C064BE2985727B0070E1C4 /* SWAPI */,
+				71D4E91A29ED9826006BDCCD /* SWAPIUITests */,
 				71C064BD2985727B0070E1C4 /* Products */,
+				713BB37D29C3427000104FF0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				71C064BC2985727B0070E1C4 /* SWAPI.app */,
+				71D4E91929ED9826006BDCCD /* SWAPIUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +111,7 @@
 			children = (
 				71C064BF2985727B0070E1C4 /* SWAPIApp.swift */,
 				71C064C12985727B0070E1C4 /* ContentView.swift */,
+				71B1818A2A1FA8D4000C6792 /* ScannerView.swift */,
 				71D29F93298579FA0022095C /* ContentViewModel.swift */,
 				71D29F80298573FC0022095C /* Models */,
 				71D29F81298573FC0022095C /* Network */,
@@ -90,6 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				71568B9129955A7000F5C14E /* ResponseData.swift */,
+				71A688C829CE8AC200FC361B /* PostModel.swift */,
+				71A688CA29CE8CCE00FC361B /* PostResponseModel.swift */,
+				71B1818C2A1FA911000C6792 /* MyScanResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +177,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		71D4E91A29ED9826006BDCCD /* SWAPIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				71D4E91B29ED9826006BDCCD /* SWAPIUITests.swift */,
+				71D4E91D29ED9826006BDCCD /* SWAPIUITestsLaunchTests.swift */,
+			);
+			path = SWAPIUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +202,32 @@
 			dependencies = (
 			);
 			name = SWAPI;
+			packageProductDependencies = (
+				71B181882A1FA875000C6792 /* CodeScanner */,
+			);
 			productName = SWAPI;
 			productReference = 71C064BC2985727B0070E1C4 /* SWAPI.app */;
 			productType = "com.apple.product-type.application";
+		};
+		71D4E91829ED9826006BDCCD /* SWAPIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71D4E92329ED9826006BDCCD /* Build configuration list for PBXNativeTarget "SWAPIUITests" */;
+			buildPhases = (
+				71D4E91529ED9826006BDCCD /* Sources */,
+				71D4E91629ED9826006BDCCD /* Frameworks */,
+				71D4E91729ED9826006BDCCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71D4E92029ED9826006BDCCD /* PBXTargetDependency */,
+			);
+			name = SWAPIUITests;
+			packageProductDependencies = (
+			);
+			productName = SWAPIUITests;
+			productReference = 71D4E91929ED9826006BDCCD /* SWAPIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -164,6 +242,10 @@
 					71C064BB2985727B0070E1C4 = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					71D4E91829ED9826006BDCCD = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 71C064BB2985727B0070E1C4;
+					};
 				};
 			};
 			buildConfigurationList = 71C064B72985727B0070E1C4 /* Build configuration list for PBXProject "SWAPI" */;
@@ -175,11 +257,15 @@
 				Base,
 			);
 			mainGroup = 71C064B32985727B0070E1C4;
+			packageReferences = (
+				71B181872A1FA875000C6792 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 71C064BD2985727B0070E1C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				71C064BB2985727B0070E1C4 /* SWAPI */,
+				71D4E91829ED9826006BDCCD /* SWAPIUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -194,6 +280,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71D4E91729ED9826006BDCCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -205,16 +298,37 @@
 				71D29F8B298573FC0022095C /* RequestError.swift in Sources */,
 				71D29F89298573FC0022095C /* HttpMethod.swift in Sources */,
 				71D29F94298579FA0022095C /* ContentViewModel.swift in Sources */,
+				71B1818B2A1FA8D4000C6792 /* ScannerView.swift in Sources */,
+				71A688CB29CE8CCE00FC361B /* PostResponseModel.swift in Sources */,
 				71568B8E2995572C00F5C14E /* ReqresService.swift in Sources */,
 				71D29F8A298573FC0022095C /* HttpClient.swift in Sources */,
 				71568B9229955A7000F5C14E /* ResponseData.swift in Sources */,
 				71568B90299557F200F5C14E /* ReqresEndpoint.swift in Sources */,
 				71D29F8C298573FC0022095C /* Endpoint.swift in Sources */,
+				71B1818D2A1FA911000C6792 /* MyScanResult.swift in Sources */,
 				71C064C02985727B0070E1C4 /* SWAPIApp.swift in Sources */,
+				71A688C929CE8AC200FC361B /* PostModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71D4E91529ED9826006BDCCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71D4E91C29ED9826006BDCCD /* SWAPIUITests.swift in Sources */,
+				71D4E91E29ED9826006BDCCD /* SWAPIUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71D4E92029ED9826006BDCCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71C064BB2985727B0070E1C4 /* SWAPI */;
+			targetProxy = 71D4E91F29ED9826006BDCCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		71C064C8298572820070E1C4 /* Debug */ = {
@@ -389,6 +503,40 @@
 			};
 			name = Release;
 		};
+		71D4E92129ED9826006BDCCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 73X37M5BQV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = self.SWAPIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SWAPI;
+			};
+			name = Debug;
+		};
+		71D4E92229ED9826006BDCCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 73X37M5BQV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = self.SWAPIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SWAPI;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -410,7 +558,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		71D4E92329ED9826006BDCCD /* Build configuration list for PBXNativeTarget "SWAPIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71D4E92129ED9826006BDCCD /* Debug */,
+				71D4E92229ED9826006BDCCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		71B181872A1FA875000C6792 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		71B181882A1FA875000C6792 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71B181872A1FA875000C6792 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 71C064B42985727B0070E1C4 /* Project object */;
 }

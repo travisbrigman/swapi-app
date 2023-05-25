@@ -11,22 +11,30 @@ struct ContentView: View {
     @StateObject var vm: ContentViewModel
 
     var body: some View {
-        switch vm.state {
-        case .loaded(let responseData):
-            VStack {
-                List {
-                    ForEach(responseData.data ){ data in
-                        Text(data.name)
-                    }
-                }
-                Text("\(responseData.data.count)")
-            }
-        case .idle:
-            Color.clear.task(vm.load)
-        case .loading:
-            ProgressView()
-        case .failed(_):
-            Text("Something Happened")
+        
+        VStack {
+    
+            MenuSection(vm: vm)
+            
+
+        }
+    }
+}
+
+struct MenuSection: View {
+    @ObservedObject var vm: ContentViewModel
+    
+    var body: some View {
+        Section {
+            ForEach($vm.toppingsArray, id: \.name) { $toppinItem in
+                Toggle(toppinItem.name, isOn: $toppinItem.state)
+            }.padding()
+        }
+        Button("Show the sheet") {
+            vm.isPresentingSheet = true
+        }
+        .sheet(isPresented: $vm.isPresentingSheet){
+            ScannerView(viewModel: vm, isShowingScanner: $vm.isPresentingSheet)
         }
     }
 }
